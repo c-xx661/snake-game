@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.game-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.game-settings {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.speed-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.speed-control input[type="range"] {
+    width: 100px;
+    cursor: pointer;
+}
+
+.speed-control #speedValue {
+    min-width: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.game-mode {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.game-mode select {
+    padding: 4px 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.game-mode select:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.score {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+#startBtn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#pauseBtn {
+    background-color: #ff9800;
+    color: white;
+}
+
+#restartBtn, #playAgainBtn {
+    background-color: #f44336;
+    color: white;
+}
+
+.game-area {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+canvas {
+    border: 2px solid #333;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+.game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    display: none;
+    z-index: 10;
+}
+
+.game-over h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.game-over p {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+#playAgainBtn {
+    margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+    .game-container {
+        padding: 15px;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .game-info {
+        flex-direction: column;
+        align-items: stretch;
+        margin-bottom: 15px;
+        flex-shrink: 0;
+    }
+    
+    .game-settings {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    
+    .speed-control,
+    .game-mode {
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .speed-control input[type="range"] {
+        flex-grow: 1;
+        max-width: 150px;
+    }
+    
+    .controls {
+        justify-content: center;
+        gap: 8px;
+        margin-top: 10px;
+    }
+    
+    .controls button {
+        padding: 10px 16px;
+        font-size: 1rem;
+        min-width: 80px;
+    }
+    
+    .game-area {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    canvas {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        max-height: 70vh;
+    }
+    
+    .game-over {
+        padding: 20px;
+        width: 90%;
+        max-width: 300px;
+    }
+    
+    .game-over h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .game-over p {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+    
+    #playAgainBtn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}

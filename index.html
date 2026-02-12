@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贪吃蛇游戏</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>贪吃蛇游戏</h1>
+        
+        <div class="game-info">
+            <div class="score">得分: <span id="score">0</span></div>
+            <div class="game-settings">
+                <div class="speed-control">
+                    <label for="speedSlider">速度: </label>
+                    <input type="range" id="speedSlider" min="5" max="20" value="10" step="1">
+                    <span id="speedValue">10</span>
+                </div>
+                <div class="game-mode">
+                    <label for="gameModeSelect">模式: </label>
+                    <select id="gameModeSelect">
+                        <option value="classic">经典模式</option>
+                        <option value="道具模式">道具模式</option>
+                        <option value="无尽模式">无尽模式</option>
+                    </select>
+                </div>
+            </div>
+            <div class="controls">
+                <button id="startBtn">开始</button>
+                <button id="pauseBtn" disabled>暂停</button>
+                <button id="restartBtn" disabled>重新开始</button>
+            </div>
+        </div>
+        
+        <div class="game-area">
+            <canvas id="gameCanvas"></canvas>
+        </div>
+        
+        <div id="gameOver" class="game-over">
+            <h2>游戏结束</h2>
+            <p>最终得分: <span id="finalScore">0</span></p>
+            <button id="playAgainBtn">再玩一次</button>
+        </div>
+    </div>
+    
+    <script src="js/utils.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/renderer.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/controls.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
